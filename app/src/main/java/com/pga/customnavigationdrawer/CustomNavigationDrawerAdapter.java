@@ -23,6 +23,7 @@ public class CustomNavigationDrawerAdapter extends ArrayAdapter<AdapterInputType
 
     String IMAGE_DRAWER_ITEM = "image";
     String ICON_TITLE_SUBTITLE = "icon+title+subtitle";
+    String FOOTER = "footer";
 
 
     // main linear layout in view
@@ -81,11 +82,11 @@ public class CustomNavigationDrawerAdapter extends ArrayAdapter<AdapterInputType
 
 
             // ITEM 2
-            if (itemList.get(position).type.equals(ICON_TITLE_SUBTITLE)){
+            if (itemList.get(position).type.equals(ICON_TITLE_SUBTITLE)) {
 
                 // define item holder
-                drawerItemHolder.icon= (ImageView) view.findViewById(R.id.icon);
-                drawerItemHolder.icon_in_title_subtitle= (ImageView) view.findViewById(R.id.icon2);
+                drawerItemHolder.icon = (ImageView) view.findViewById(R.id.icon);
+                drawerItemHolder.icon_in_title_subtitle = (ImageView) view.findViewById(R.id.icon2);
                 drawerItemHolder.title = (TextView) view.findViewById(R.id.title);
                 drawerItemHolder.subtitle = (TextView) view.findViewById(R.id.subtitle);
 
@@ -99,9 +100,31 @@ public class CustomNavigationDrawerAdapter extends ArrayAdapter<AdapterInputType
 
                 // set item holder to view
                 view.setTag(drawerItemHolder);
-
-
             }
+
+
+                // ITEM 3
+                if (itemList.get(position).type.equals(FOOTER)) {
+
+                    // define item holder
+                    drawerItemHolder.icon = (ImageView) view.findViewById(R.id.icon);
+                    drawerItemHolder.icon_in_title_subtitle = (ImageView) view.findViewById(R.id.icon2);
+                    drawerItemHolder.title = (TextView) view.findViewById(R.id.title);
+                    drawerItemHolder.subtitle = (TextView) view.findViewById(R.id.subtitle);
+
+                    // set values
+                    drawerItemHolder.icon_in_title_subtitle.setImageBitmap(itemList.get(position).icon);
+                    drawerItemHolder.title.setText(itemList.get(position).title);
+                    drawerItemHolder.subtitle.setText(itemList.get(position).subtitle);
+
+
+                    PleaseOnlyShow(lv_icon_title_subtitle);
+
+                    // set item holder to view
+                    view.setTag(drawerItemHolder);
+                }
+
+
 
         } else {
             // TODO Recyle View To use;

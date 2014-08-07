@@ -99,10 +99,12 @@ public class NavigationDrawerFragment extends Fragment {
                 R.drawable.ic_launcher);
         item3.title="title here";
 
-         datalist.add(item);
+
+
+        datalist.add(item);
         datalist.add(item2);
-        //datalist.add(item);
         datalist.add(item3);
+        datalist.add(item);
 
 
 
