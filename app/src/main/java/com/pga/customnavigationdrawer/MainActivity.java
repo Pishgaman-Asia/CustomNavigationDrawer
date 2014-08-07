@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity {//ashkan did this
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
